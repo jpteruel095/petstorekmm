@@ -36,9 +36,9 @@ kotlin {
                 Required by Ktor on runtime. If this dependency is not added, we are getting an error:
                 "Ktor native HttpClient requires kotlinx.coroutines version with `native-mt` suffix (like `1.3.9-native-mt`). Consider checking the dependencies."
                  */
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1-native-mt") {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-native-mt") {
                     version {
-                        strictly("1.5.1-native-mt")
+                        strictly("1.5.0-native-mt")
                     }
                 }
             }

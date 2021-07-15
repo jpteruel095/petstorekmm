@@ -5,7 +5,12 @@ struct ContentView: View {
 	let greet = Greeting().greeting()
 
 	var body: some View {
-		Text(greet)
+        Text(greet).onAppear(perform: {
+            Greeting().getPet { (response, error) in
+                print(response)
+                print(error)
+            }
+        })
 	}
 }
 

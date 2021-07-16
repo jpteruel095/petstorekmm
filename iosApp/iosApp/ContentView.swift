@@ -8,6 +8,7 @@ struct ContentView: View {
 	var body: some View {
         Text(greet).onAppear(perform: {
             Greeting().getPet { (response, error) in
+                // causes the propagation crash if error is returned
                 response?.body(completionHandler: { (pet, bodyerror) in
                     print(pet)
                     print(bodyerror)

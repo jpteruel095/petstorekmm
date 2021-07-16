@@ -7,19 +7,19 @@ struct ContentView: View {
 
 	var body: some View {
         Text(greet).onAppear(perform: {
-//            Greeting().getPet { (response, error) in
-//                response?.body(completionHandler: { (pet, bodyerror) in
-//                    print(pet)
-//                    print(bodyerror)
-//                })
-//                print(response)
-//                print(error)
-//            }
-            
-            Greeting().getSomething { (petname, error) in
-                print(petname)
+            Greeting().getPet { (response, error) in
+                response?.body(completionHandler: { (pet, bodyerror) in
+                    print(pet)
+                    print(bodyerror)
+                })
+                print(response)
                 print(error)
             }
+            
+//            Greeting().getSomething { (petname, error) in
+//                print(petname)
+//                print(error)
+//            }
         })
 	}
 }

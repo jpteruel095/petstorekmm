@@ -30,17 +30,7 @@ kotlin {
     sourceSets {
         val commonMain by getting{
             dependencies{
-                implementation("org.openapitools:kotlin-client-petstore-multiplatform:1.0.0")
-
-                /*
-                Required by Ktor on runtime. If this dependency is not added, we are getting an error:
-                "Ktor native HttpClient requires kotlinx.coroutines version with `native-mt` suffix (like `1.3.9-native-mt`). Consider checking the dependencies."
-                 */
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-native-mt") {
-                    version {
-                        strictly("1.5.0-native-mt")
-                    }
-                }
+                implementation("io.github.bradfordcan:kotlin-client-petstore-multiplatform:1.0.3:sources")
             }
         }
         val commonTest by getting {

@@ -18,15 +18,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven {
-            url = uri(
-                path = localProperties.getProperty("REPOSITORY_ENDPOINT")!!
-            )
-            credentials {
-                username = localProperties.getProperty("USERNAME")!!
-                password = localProperties.getProperty("AUTH_TOKEN")!!
-            }
-        }
     }
 }
 

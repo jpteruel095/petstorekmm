@@ -3,18 +3,21 @@ import shared
 
 // petstore sample
 struct ContentView: View {
+	let greet = Greeting().greeting()
 
 	var body: some View {
-        Text("Pet Tester").onAppear(perform: {
-            PetService().fetchPet { (response, error) in
-                response?.body(completionHandler: { (pet, bodyerror) in
-                    print(pet)
-                    print(bodyerror)
-                    
-                    print("Pet name:")
-                    print(pet?.name)
-                })
-                print(response)
+        Text(greet).onAppear(perform: {
+//            Greeting().getPet { (response, error) in
+//                response?.body(completionHandler: { (pet, bodyerror) in
+//                    print(pet)
+//                    print(bodyerror)
+//                })
+//                print(response)
+//                print(error)
+//            }
+            
+            Greeting().getSomething { (petname, error) in
+                print(petname)
                 print(error)
             }
         })

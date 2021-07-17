@@ -7,7 +7,7 @@ struct ContentView: View {
 
 	var body: some View {
         Text(greet).onAppear(perform: {
-            Greeting().getPet { (response, error) in
+            PSService().getPetById(petId: 1) { (response, error) in
                 // causes the propagation crash if error is returned
                 response?.body(completionHandler: { (pet, bodyerror) in
                     print(pet)
@@ -16,11 +16,6 @@ struct ContentView: View {
                 print(response)
                 print(error)
             }
-            
-//            Greeting().getSomething { (petname, error) in
-//                print(petname)
-//                print(error)
-//            }
         })
 	}
 }

@@ -8,7 +8,9 @@ object PetStoreService {
     private val api = PetApi()
 
     @Throws(Throwable::class)
-    suspend fun getPetById(petId: Long): HttpResponse<Pet> {
-        return api.getPetById(petId)
+    suspend fun getPetById(petId: Long): Pet {
+        return api.getPetById(petId).run{
+            body()
+        }
     }
 }

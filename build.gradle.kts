@@ -1,6 +1,7 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 
 buildscript {
+    val kotlin_version by extra("1.5.20")
     repositories {
         gradlePluginPortal()
         google()

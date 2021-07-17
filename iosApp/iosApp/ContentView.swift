@@ -3,11 +3,10 @@ import shared
 
 // petstore sample
 struct ContentView: View {
-	let greet = Greeting().greeting()
-
+    let petId: Int64 = 9223372000000186000
 	var body: some View {
-        Text(greet).onAppear(perform: {
-            PSService().getPetById(petId: 1) { (response, error) in
+        Text("Pet Store Tester").onAppear(perform: {
+            PetStoreService().getPetById(petId: petId) { (response, error) in
                 // causes the propagation crash if error is returned
                 response?.body(completionHandler: { (pet, bodyerror) in
                     print(pet)

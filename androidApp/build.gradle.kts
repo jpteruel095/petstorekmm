@@ -10,6 +10,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha02")
+
+    // Prevents exception - at io.ktor.client.HttpClientJvmKt.HttpClient
     implementation("io.ktor:ktor-client-core:1.6.1")
     implementation("io.ktor:ktor-client-cio:1.6.1")
 }

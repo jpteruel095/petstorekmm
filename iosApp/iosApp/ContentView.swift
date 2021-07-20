@@ -3,13 +3,15 @@ import shared
 
 // petstore sample
 struct ContentView: View {
-    let petId: Int64 = 9223372000000186000
+    let petId: Int64 = 1
+    let service = PetStoreService()
 	var body: some View {
         Text("Pet Store Tester").onAppear(perform: {
-            PetStoreService().getPetById(petId: petId) { (pet, bodyerror) in
-                print(pet)
+            service.getPetById(petId: petId, completionHandler: { (pet, bodyerror) in
+                
+                print(pet?.name)
                 print(bodyerror)
-            }
+            })
         })
 	}
 }

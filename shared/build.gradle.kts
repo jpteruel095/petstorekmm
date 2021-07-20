@@ -26,10 +26,10 @@ kotlin {
         frameworkName = "shared"
         podfile = project.file("../iosApp/Podfile")
     }
-    
+
     sourceSets {
-        val commonMain by getting{
-            dependencies{
+        val commonMain by getting {
+            dependencies {
                 implementation("org.openapitools:kotlin-client-petstore-multiplatform:1.0.0")
 
                 /*

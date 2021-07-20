@@ -7,17 +7,16 @@ import org.openapitools.client.models.Pet
 class PetStoreService{
     @Throws(Throwable::class)
     suspend fun getPetById(petId: Long): PetObject {
-        return ClientWrapper.getPetById(petId)
+        val resp = ClientWrapper.api.getPetById(petId).body()
+        return PetObj(resp.name)
     }
 }
 
 internal object ClientWrapper {
-    private val api = PetApi()
+    val api = PetApi()
+}
 
-    @Throws(Throwable::class)
-    suspend fun getPetById(petId: Long): HttpResponse<Pet> {
-        return api.getPetById(petId)
-    }
+sealed class PetObject(val name: String) {
 }
 
 internal class PetObj(name: String) : PetObject(name) {

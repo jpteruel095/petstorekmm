@@ -16,8 +16,7 @@ internal object ClientWrapper {
     val api = PetApi()
 }
 
-sealed class PetObject(val name: String) {
-}
+sealed class PetObject(val name: String)
 
-internal class PetObj(name: String) : PetObject(name) {
-}
+// internal - visible everywhere in the same module
+internal class PetObj(name: String) : PetObject(name)
